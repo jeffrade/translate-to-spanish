@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Translate To Spanish</string>
+    <string name="translateButtonName">Translate</string>
+    <string name="initialEnglishWord">hello</string>
+    <string name="initialWordTranslated">...</string>
+    <string name="translate_service_name"><a href="http://translate.yandex.com/">Powered by Yandex.Translate</a></string>
+
+</resources>
