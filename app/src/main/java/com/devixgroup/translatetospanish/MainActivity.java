@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.KeyEvent;
@@ -61,8 +62,14 @@ public class MainActivity extends AppCompatActivity {
         mTranslateButton = (Button) findViewById(R.id.translateButton);
         mDbHelper = new TranslationDbHelper(this);
         mTranslationDb = mDbHelper.getWritableDatabase();
+        initUrlLinks();
         initProperties();
         initVolley();
+    }
+
+    private void initUrlLinks() {
+        TextView translateServiceLink = (TextView) findViewById(R.id.translateServicePlug);
+        translateServiceLink.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void initProperties() {
