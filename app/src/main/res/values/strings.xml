@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Translate To Spanish</string>
+    <string name="action_quit">Quit</string>
     <string name="translateButtonName">Translate</string>
     <string name="initialEnglishWord">hello</string>
     <string name="initialWordTranslated">...</string>
     <string name="translate_service_name"><a href="http://translate.yandex.com/">Powered by Yandex.Translate</a></string>
+
+    <string name="action_about">About</string>
+
+    <string name="app_about_text">English to Spanish Translation App</string>
+    <string name="app_about_sub_text">built by Devix Group</string>
+    <string name="app_about_ver_text">ver 1.0.0</string>
 
 </resources>
