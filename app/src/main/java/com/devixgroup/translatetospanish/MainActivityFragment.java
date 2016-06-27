@@ -92,8 +92,8 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         return new EditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                Log.d(LOG_TAG, "onEditorAction: actionId=" + actionId + ", event=" + event.toString());
-                if (event.getAction() == KeyEvent.ACTION_DOWN
+                Log.d(LOG_TAG, "onEditorAction: actionId=" + actionId + ", event=" + event);
+                if (event != null && event.getAction() == KeyEvent.ACTION_DOWN
                         && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     Log.d(LOG_TAG, "onEditorAction: true, performClick()...");
                     mTranslateButton.performClick();
