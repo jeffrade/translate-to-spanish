@@ -27,7 +27,7 @@ import java.util.List;
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener {
 
-    private static final String LOG_TAG = MainActivityFragment.class.getName();
+    public static final String LOG_TAG = MainActivityFragment.class.getName();
     private static final String ERROR_MESSAGE = "Sorry, could not translate";
     private static final String NETWORK_ERROR = "Network error!";
 

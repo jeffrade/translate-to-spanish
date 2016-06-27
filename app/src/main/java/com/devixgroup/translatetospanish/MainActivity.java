@@ -36,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
         args.putString(K, mKey);
         mainFragment.setArguments(args);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.main_frame, mainFragment, String.valueOf(R.id.main_frame))
+                .add(R.id.main_frame, mainFragment, MainActivityFragment.LOG_TAG)
                 .commit();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     private void initialize() {
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d(LOG_TAG, " onOptionsItemSelected: entering... item=" + item);
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -82,13 +84,21 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_about) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_frame, new AboutFragment(), String.valueOf(R.id.action_about))
-                    .addToBackStack(String.valueOf(R.id.main_frame))
+                    .replace(R.id.main_frame, new AboutFragment(), AboutFragment.LOG_TAG)
+                    .addToBackStack(null)
                     .commit();
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Log.d(LOG_TAG, "#################### onSupportNavigateUp:");
+        getSupportFragmentManager().popBackStack();
+        return true;
     }
 
     @Override
