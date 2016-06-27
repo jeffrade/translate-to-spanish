@@ -16,7 +16,7 @@
         android:text="@string/app_about_text"
         android:layout_marginTop="@dimen/large_vertical_margin"
         android:layout_marginBottom="@dimen/small_vertical_margin"
-        android:textSize="16sp"
+        android:textSize="@dimen/medium_text_size"
         android:textAlignment="center"
         android:id="@+id/about_text"/>
 
@@ -26,7 +26,7 @@
         android:text="@string/app_about_sub_text"
         android:layout_marginTop="@dimen/small_vertical_margin"
         android:layout_marginBottom="@dimen/small_vertical_margin"
-        android:textSize="10sp"
+        android:textSize="@dimen/small_text_size"
         android:textAlignment="center"
         android:id="@+id/about_sub_text"
         android:layout_below="@id/about_text" />
@@ -37,7 +37,7 @@
         android:text="@string/app_about_ver_text"
         android:layout_marginTop="@dimen/tiny_vertical_margin"
         android:layout_marginBottom="@dimen/small_vertical_margin"
-        android:textSize="10sp"
+        android:textSize="@dimen/small_text_size"
         android:textAlignment="center"
         android:id="@+id/about_ver_text"
         android:layout_below="@id/about_sub_text" />
