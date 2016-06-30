@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String K = "k";
 
     private Properties mProperties;
-    private String mKey;
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         initialize();
         Fragment mainFragment = new MainActivityFragment();
         Bundle args = new Bundle();
-        args.putString(K, mKey);
+        args.putString(K, mProperties.getProperty("k"));
         mainFragment.setArguments(args);
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_frame, mainFragment, MainActivityFragment.LOG_TAG)
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             mProperties = new Properties();
             mProperties.load(getAssets().open("app.properties"));
-            mKey = mProperties.getProperty("k");
         } catch (IOException e) {
             Log.e(LOG_TAG, "Encountered an error while trying to get properties", e);
         }
