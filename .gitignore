@@ -36,3 +36,5 @@ captures/
 .idea/
 .DS_Store
 
+*.keystore
+
