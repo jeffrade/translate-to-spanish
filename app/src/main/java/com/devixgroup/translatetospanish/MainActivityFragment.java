@@ -56,7 +56,14 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         mTranslateButton = (Button) view.findViewById(R.id.translateButton);
         mTranslateButton.setOnClickListener(this);
         initUrlLinks(view);
+        initViews();
         return view;
+    }
+
+    private void initViews() {
+        Log.d(LOG_TAG, "in initViews...");
+        mEnglishEditText.setText(R.string.initialEnglishWord);
+        mSpansihTextView.setText(R.string.initialWordTranslated);
     }
 
     @Override
@@ -106,6 +113,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     public void onResume() {
         Log.d(LOG_TAG, "in onResume...");
         super.onResume();
+        initViews();
     }
 
     @Override
