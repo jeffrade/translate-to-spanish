@@ -47,11 +47,6 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         mTranslationDao = new TranslationDAO(getActivity());
     }
 
-    private void initUrlLinks(View view) {
-        TextView translateServiceLink = (TextView) view.findViewById(R.id.translateServicePlug);
-        translateServiceLink.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -117,6 +112,11 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     public void onStart() {
         Log.d(LOG_TAG, "in onStart...");
         super.onStart();
+    }
+
+    private void initUrlLinks(View view) {
+        TextView translateServiceLink = (TextView) view.findViewById(R.id.translateServicePlug);
+        translateServiceLink.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private String translate(final String text) {
