@@ -1,5 +1,6 @@
 package com.devixgroup.translatetospanish;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -68,6 +69,54 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         final String englishText = mEnglishEditText.getText().toString().trim();
         final String spanishText = translate(englishText);
         mSpansihTextView.setText(spanishText);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        Log.d(LOG_TAG, "in onAttach...");
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDestroyView() {
+        Log.d(LOG_TAG, "in onDestroyView...");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(LOG_TAG, "in onDestroy...");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        Log.d(LOG_TAG, "in onDetach...");
+        super.onDetach();
+    }
+
+    @Override
+    public void onStop() {
+        Log.d(LOG_TAG, "in onStop...");
+        super.onStop();
+    }
+
+    @Override
+    public void onPause() {
+        Log.d(LOG_TAG, "in onPause...");
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        Log.d(LOG_TAG, "in onResume...");
+        super.onResume();
+    }
+
+    @Override
+    public void onStart() {
+        Log.d(LOG_TAG, "in onStart...");
+        super.onStart();
     }
 
     private String translate(final String text) {
