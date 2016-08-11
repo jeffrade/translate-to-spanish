@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -57,6 +58,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         mTranslateButton.setOnClickListener(this);
         initUrlLinks(view);
         initViews();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         return view;
     }
 

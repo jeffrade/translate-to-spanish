@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_frame, mainFragment, MainActivityFragment.LOG_TAG)
                 .commit();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     private void initialize() {
